@@ -1,0 +1,13 @@
+.platforms{background:linear-gradient(180deg,var(--night),var(--dusk))}
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.plat{
+  display:flex;align-items:center;gap:14px;
+  border:1px solid rgba(247,236,216,.16);border-radius:16px;
+  padding:18px 20px;text-decoration:none;
+  background:rgba(247,236,216,.03);
+  transition:transform .2s,border-color .2s,background .2s;
+}
+.plat:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(242,185,63,.08)}
+.plat svg{width:30px;height:30px;flex:none}
+.plat b{display:block;font-size:.95rem;font-weight:600}
+.plat small{display:block;color:var(--cream-dim);font-size:.78rem}

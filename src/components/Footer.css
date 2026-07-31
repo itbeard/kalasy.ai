@@ -1,0 +1,6 @@
+footer{padding:60px 20px 46px;text-align:center;border-top:1px solid rgba(242,185,63,.15)}
+.foot-quote{font-family:"Bad Script",cursive;color:var(--gold-bright);font-size:1.15rem;max-width:46ch;margin:0 auto 30px}
+.foot-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.foot-links a{color:var(--cream-dim);text-decoration:none;font-size:.9rem;transition:color .2s}
+.foot-links a:hover{color:var(--gold-bright)}
+.copy{color:rgba(205,187,158,.55);font-size:.8rem}
