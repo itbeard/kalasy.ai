@@ -1,0 +1,46 @@
+{
+  "projectId": "85658cf0-3e49-41d9-b91c-5b07e18cc389",
+  "shape": "package",
+  "pkg": "kalasy-ai",
+  "globalName": "KalasyAI",
+  "buildCmd": "node .design-sync/gen-content-shims.mjs",
+  "entry": ".design-sync/ds-entry.js",
+  "tsconfig": ".design-sync/tsconfig.json",
+  "srcDir": "src/components",
+  "cssEntry": ".design-sync/.cache/styles-entry.css",
+  "extraFonts": [
+    ".design-sync/fonts/fonts.css"
+  ],
+  "provider": {
+    "component": "LangProvider"
+  },
+  "overrides": {
+    "Header": {
+      "cardMode": "single",
+      "primaryStory": "Default"
+    }
+  },
+  "componentSrcMap": {
+    "Header": "src/components/Header.jsx",
+    "Hero": "src/components/Hero.jsx",
+    "Ornament": "src/components/Ornament.jsx",
+    "About": "src/components/About.jsx",
+    "Featured": "src/components/Featured.jsx",
+    "Platforms": "src/components/Platforms.jsx",
+    "Episodes": "src/components/Episodes.jsx",
+    "Hosts": "src/components/Hosts.jsx",
+    "Faq": "src/components/Faq.jsx",
+    "Footer": "src/components/Footer.jsx",
+    "SpotifyIcon": "src/components/Icons.jsx",
+    "AppleIcon": "src/components/Icons.jsx",
+    "YouTubeIcon": "src/components/Icons.jsx",
+    "TelegramIcon": "src/components/Icons.jsx",
+    "InstagramIcon": "src/components/Icons.jsx",
+    "Mp3Icon": "src/components/Icons.jsx",
+    "RssIcon": "src/components/Icons.jsx",
+    "PlayIcon": "src/components/Icons.jsx",
+    "PauseIcon": "src/components/Icons.jsx"
+  },
+  "docsDir": ".design-sync/docs",
+  "readmeHeader": ".design-sync/conventions.md"
+}
