@@ -19,6 +19,12 @@ npm run build  # прадакшн-зборка ў dist/
 - `public/assets/` — графіка (фон, лога, фота вядоўцаў).
 - `Графіка/` — зыходнікі графікі (PSD і поўнапамерныя выявы), у зборку не трапляюць.
 
+## Дэплой (GitHub Pages)
+
+Пуш у `main` → GitHub Actions ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)) збірае `dist/` і выкладвае на Pages з даменам kalasy.ai (`public/CNAME`).
+
+Аднаразовая налада ў рэпазіторыі: **Settings → Pages → Build and deployment → Source: GitHub Actions** (не «Deploy from a branch»!) і ўключыць **Enforce HTTPS** пасля выпуску сертыфіката.
+
 ## GEO / SEO
 
 - `index.html` — JSON-LD разметка (`PodcastSeries`, `FAQPage`), canonical, OG-мета, `<noscript>`-змест для краулераў без JS.
