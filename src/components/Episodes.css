@@ -10,7 +10,7 @@
 }
 .ep-body{flex:1;min-width:0}
 .ep-title{display:block;font-weight:600;font-size:1rem;color:var(--cream)}
-.ep-meta{display:block;color:var(--cream-dim);font-size:.82rem;margin-top:4px}
+.ep-meta{display:block;color:#e3d3b7;font-size:.84rem;margin-top:4px}
 .ep-play{
   flex:none;width:46px;height:46px;border-radius:50%;
   border:1px solid rgba(242,185,63,.5);background:rgba(242,185,63,.1);

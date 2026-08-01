@@ -25,14 +25,27 @@
   margin-top:26px;font-size:clamp(1.02rem,2.2vw,1.3rem);max-width:min(34ch,100%);
   font-weight:500;color:var(--cream);text-shadow:0 2px 16px rgba(0,0,0,.9);
 }
-.hero-quote{
-  font-family:"Bad Script",cursive;
-  font-size:clamp(1.05rem,2.1vw,1.35rem);
-  color:var(--gold-bright);
-  max-width:min(52ch,100%);margin-top:20px;
-  text-shadow:0 2px 14px rgba(0,0,0,.95);
+.hero-play{
+  display:inline-flex;align-items:center;gap:14px;margin-top:42px;padding:14px 30px 14px 18px;
+  border:none;border-radius:99px;background:var(--gold);color:#1c1408;
+  font:700 1rem/1.3 "Golos Text",sans-serif;text-align:left;cursor:pointer;
+  box-shadow:0 0 34px rgba(242,185,63,.5);transition:transform .22s,box-shadow .22s;
 }
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:40px}
+.hero-play:hover{transform:translateY(-2px);box-shadow:0 0 52px rgba(242,185,63,.78)}
+.hero-play-ico{
+  width:38px;height:38px;flex:none;border-radius:50%;background:#1c1408;color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-play-ico svg{width:15px;height:15px}
+.hero-play small{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.hero-play b{display:block;max-width:22ch;font-size:1rem;font-weight:700}
+.hero-also{
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center;margin-top:22px;
+  font-size:.86rem;color:#e3d3b7;text-shadow:0 2px 12px rgba(0,0,0,.9);
+}
+.hero-also span{opacity:.8}
+.hero-also a{color:var(--gold-bright);text-decoration:none;padding-bottom:1px;border-bottom:1px solid rgba(255,217,138,.35)}
+.hero-also a:hover{color:var(--gold)}
 .scroll-hint{
   position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
   color:var(--gold-bright);opacity:.8;animation:bob 2.2s ease-in-out infinite;font-size:1.4rem;
@@ -54,7 +67,8 @@
 }
 
 @media (max-width:560px){
-  .hero-cta .btn{padding:12px 20px;font-size:.88rem}
+  .hero-play{padding:12px 22px 12px 14px}
+  .hero-play b{font-size:.92rem}
 }
 @media (prefers-reduced-motion:reduce){
   .shard,.scroll-hint{animation:none}

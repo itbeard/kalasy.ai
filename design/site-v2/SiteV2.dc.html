@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Kalasy.ai — лэндынг v2" description="Пераробленая галоўная: адзін заклік у героі, стужка лічбаў, новы рытм раздзелаў, прыліплы плэер, рух, даступнасць, Telegram-паласа." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>body{margin:0;background:#14100b}a{color:#ffd98a}a:hover{color:#f2b93f}:focus-visible{outline:2px solid #ffedc2;outline-offset:3px;border-radius:6px}.ep-meta,.plat small,.host p{font-size:.84rem!important;color:#e3d3b7!important}@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important}}</style>
+</helmet>
+<x-import component-from-global-scope="KalasyAI.LangProvider" hint-size="100%,2400px">
+
+<x-import component-from-global-scope="KalasyAI.Header" hint-size="100%,64px"></x-import>
+
+<div class="hero" id="top">
+<span class="shard" style="left:6%;bottom:12%;background:#d8431f;width:9px;height:9px;animation-duration:13s;animation-delay:-4s"></span>
+<span class="shard" style="left:17%;bottom:24%;background:#2e7d43;width:12px;height:12px;animation-duration:17s;animation-delay:-11s"></span>
+<span class="shard" style="left:29%;bottom:6%;background:#f2b93f;width:7px;height:7px;animation-duration:11s;animation-delay:-2s"></span>
+<span class="shard" style="left:38%;bottom:19%;background:#a92f14;width:11px;height:11px;animation-duration:19s;animation-delay:-15s"></span>
+<span class="shard" style="left:52%;bottom:28%;background:#d8431f;width:8px;height:8px;animation-duration:15s;animation-delay:-7s"></span>
+<span class="shard" style="left:63%;bottom:9%;background:#2e7d43;width:13px;height:13px;animation-duration:21s;animation-delay:-18s"></span>
+<span class="shard" style="left:71%;bottom:22%;background:#f2b93f;width:10px;height:10px;animation-duration:12s;animation-delay:-5s"></span>
+<span class="shard" style="left:84%;bottom:15%;background:#a92f14;width:9px;height:9px;animation-duration:16s;animation-delay:-9s"></span>
+<span class="shard" style="left:93%;bottom:26%;background:#d8431f;width:11px;height:11px;animation-duration:18s;animation-delay:-13s"></span>
+<p class="hero-kicker">Падкаст · раз на два тыдні · па-беларуску</p>
+<h1>Каласы пад сярпом <span class="ai">ШІ</span></h1>
+<p class="hero-sub">Падкаст пра штучны інтэлект — проста, дасціпна і па-беларуску.</p>
+<a href="https://kalasyai.podbean.com/e/26/" onClick="{{ playLatest }}" style="display:inline-flex;align-items:center;gap:14px;background:#f2b93f;color:#1c1408;padding:14px 30px 14px 18px;border-radius:99px;font-weight:700;text-decoration:none;box-shadow:0 0 34px rgba(242,185,63,.5);margin-top:42px;transition:transform .22s,box-shadow .22s;text-align:left;cursor:pointer" style-hover="transform:translateY(-2px);box-shadow:0 0 52px rgba(242,185,63,.78)">
+<span style="width:38px;height:38px;border-radius:99px;background:#1c1408;color:#f2b93f;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex:none" aria-hidden="true">▶</span>
+<span><span style="display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7">Апошні выпуск · #26</span><span style="display:block;font-size:1rem;line-height:1.3;max-width:22ch">Рабатызацыя Беларусі, каханне з робатам</span></span>
+</a>
+<div style="display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:.86rem;color:#e3d3b7;text-shadow:0 2px 12px rgba(0,0,0,.9)">
+<span style="opacity:.8">Таксама ў:</span>
+<a href="https://open.spotify.com/show/1hs0L5Rtpp1BQ8wzFTMkZr" target="_blank" rel="noopener noreferrer" style="color:#ffd98a;text-decoration:none;border-bottom:1px solid rgba(255,217,138,.35);padding-bottom:1px">Spotify</a>
+<a href="https://podcasts.apple.com/us/podcast/id1833654219" target="_blank" rel="noopener noreferrer" style="color:#ffd98a;text-decoration:none;border-bottom:1px solid rgba(255,217,138,.35);padding-bottom:1px">Apple Podcasts</a>
+<a href="https://youtube.com/kalasyai" target="_blank" rel="noopener noreferrer" style="color:#ffd98a;text-decoration:none;border-bottom:1px solid rgba(255,217,138,.35);padding-bottom:1px">YouTube</a>
+<a href="https://feed.podbean.com/kalasyai/feed.xml" target="_blank" rel="noopener noreferrer" style="color:#ffd98a;text-decoration:none;border-bottom:1px solid rgba(255,217,138,.35);padding-bottom:1px">RSS</a>
+</div>
+<a class="scroll-hint" href="#featured" aria-label="Пракруціць уніз">▾</a>
+</div>
+
+<sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+<div style="background:#241a10;border-top:1px solid rgba(242,185,63,.14);border-bottom:1px solid rgba(242,185,63,.14)">
+<div class="wrap" style="display:flex;flex-wrap:wrap" data-reveal="up">
+<div style="flex:1 1 150px;padding:26px 12px;text-align:center;border-right:1px solid rgba(242,185,63,.12)"><div style="font-family:'Unbounded',sans-serif;font-size:1.9rem;font-weight:700;color:#f2b93f;line-height:1">26</div><div style="font-size:.78rem;color:#cdbb9e;letter-spacing:.12em;text-transform:uppercase;margin-top:7px">выпускаў</div></div>
+<div style="flex:1 1 150px;padding:26px 12px;text-align:center;border-right:1px solid rgba(242,185,63,.12)"><div style="font-family:'Unbounded',sans-serif;font-size:1.9rem;font-weight:700;color:#f2b93f;line-height:1">58</div><div style="font-size:.78rem;color:#cdbb9e;letter-spacing:.12em;text-transform:uppercase;margin-top:7px">гадзін размоў</div></div>
+<div style="flex:1 1 150px;padding:26px 12px;text-align:center;border-right:1px solid rgba(242,185,63,.12)"><div style="font-family:'Unbounded',sans-serif;font-size:1.9rem;font-weight:700;color:#f2b93f;line-height:1">2</div><div style="font-size:.78rem;color:#cdbb9e;letter-spacing:.12em;text-transform:uppercase;margin-top:7px">тыдні паміж</div></div>
+<div style="flex:1 1 150px;padding:26px 12px;text-align:center"><div style="font-family:'Unbounded',sans-serif;font-size:1.9rem;font-weight:700;color:#f2b93f;line-height:1">3</div><div style="font-size:.78rem;color:#cdbb9e;letter-spacing:.12em;text-transform:uppercase;margin-top:7px">вядучыя</div></div>
+</div>
+</div>
+</sc-if>
+
+<section id="featured" style="background:linear-gradient(180deg,#241a10,#14100b);padding:84px 20px">
+<div class="wrap" style="display:flex;flex-wrap:wrap;gap:44px;align-items:center" data-reveal="up">
+<div style="flex:1.5 1 440px;min-width:300px;position:relative;padding-top:31%;border-radius:18px;overflow:hidden;border:1px solid rgba(242,185,63,.28);box-shadow:0 24px 70px rgba(0,0,0,.6)">
+<iframe src="https://www.youtube-nocookie.com/embed/-H2B3QC_NdY" title="Каласы пад сярпом ШІ — афлайн-выпуск у замку" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+</div>
+<div style="flex:1 1 280px;min-width:260px">
+<div style="font-family:'Unbounded',sans-serif;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:#d8431f;font-weight:700">Пачніце адсюль</div>
+<h2 style="font-family:'Marck Script',cursive;font-weight:400;font-size:clamp(2rem,4vw,2.9rem);color:#ffedc2;margin:10px 0 0;line-height:1.1">Эталонны выпуск</h2>
+<p style="color:#cdbb9e;font-size:1.02rem;margin:16px 0 0;text-wrap:pretty">Не ведаеце, з чаго пачаць? Паглядзіце наш першы афлайн-запіс у сапраўдным замку: эмоцыі ў ШІ, кланаванне калег, звальненні і крыху віна.</p>
+<a href="https://youtube.com/kalasyai" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:20px;color:#ffd98a;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,217,138,.4);padding-bottom:2px">Глядзець на YouTube →</a>
+</div>
+</div>
+</section>
+
+<div data-reveal="x" style="transform-origin:left center"><x-import component-from-global-scope="KalasyAI.Ornament" hint-size="100%,34px"></x-import></div>
+
+<section id="episodes" style="background:#14100b;padding:84px 20px">
+<div class="wrap">
+<h2 class="sec-title">Апошнія выпускі</h2>
+<p class="sec-lead">Націсніце ▶ — і слухайце проста тут, плэер застанецца ўнізе.</p>
+<div class="ep-list" data-reveal="up">
+<sc-for list="{{ episodes }}" as="ep" hint-placeholder-count="6">
+<a class="ep" href="{{ ep.link }}" target="_blank" rel="noopener noreferrer">
+<span class="ep-num">{{ ep.num }}</span>
+<span class="ep-body"><span class="ep-title">{{ ep.title }}</span><span class="ep-meta">{{ ep.meta }}</span></span>
+<button class="ep-play" onClick="{{ ep.play }}" aria-label="{{ ep.aria }}" style="font-size:.8rem;line-height:1">{{ ep.icon }}</button>
+</a>
+</sc-for>
+</div>
+<div class="all-eps"><a class="btn btn-ghost" href="https://kalasyai.podbean.com" target="_blank" rel="noopener noreferrer">Усе выпускі →</a></div>
+</div>
+</section>
+
+<sc-if value="{{ showTelegram }}" hint-placeholder-val="{{ true }}">
+<section style="background:linear-gradient(115deg,#3a2a16 0%,#241a10 52%,#1b1409 100%);padding:72px 20px;border-top:1px solid rgba(242,185,63,.16);border-bottom:1px solid rgba(242,185,63,.16)">
+<div class="wrap" style="text-align:center" data-reveal="up">
+<div style="font-family:'Bad Script',cursive;font-size:clamp(1.15rem,2.4vw,1.5rem);color:#ffd98a;max-width:36ch;margin:0 auto;line-height:1.5">«Каб не прапусціць, як ШІ будзе жаць нашы палеткі далей»</div>
+<a href="https://t.me/kalasyai" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:12px;background:#f2b93f;color:#1c1408;padding:14px 30px;border-radius:99px;font-weight:700;text-decoration:none;margin-top:24px;box-shadow:0 0 30px rgba(242,185,63,.45);transition:transform .22s,box-shadow .22s" style-hover="transform:translateY(-2px);box-shadow:0 0 48px rgba(242,185,63,.72)">Падпісацца ў Telegram</a>
+<p style="color:#cdbb9e;font-size:.86rem;margin:16px 0 0">анонсы выпускаў і навіны ШІ па-беларуску · без спаму</p>
+</div>
+</section>
+</sc-if>
+
+<div style="background:#241a10"><x-import component-from-global-scope="KalasyAI.About" hint-size="100%,520px"></x-import></div>
+
+<section style="background:#14100b;padding:96px 20px;position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(242,185,63,.09),transparent 70%);pointer-events:none"></div>
+<div class="wrap" style="position:relative;text-align:center" data-reveal="up">
+<div style="color:#d8431f;font-size:2.4rem;line-height:1;font-family:'Marck Script',cursive" aria-hidden="true">❦</div>
+<blockquote style="font-family:'Bad Script',cursive;font-size:clamp(1.35rem,3.2vw,2.15rem);color:#ffd98a;max-width:24ch;margin:18px auto 0;line-height:1.55;text-wrap:pretty">«Штось няўлоўнае коціцца з гарадоў у вёскі… не дым, не гул, а нібы ціхі розум, што без вачэй глядзіць, без языка гаворыць, ды ўсё пра нас ведае»</blockquote>
+</div>
+</section>
+
+<div data-reveal="x" style="transform-origin:left center"><x-import component-from-global-scope="KalasyAI.Ornament" green="{{ true }}" hint-size="100%,34px"></x-import></div>
+
+<div style="background:linear-gradient(180deg,#241a10,#14100b)"><x-import component-from-global-scope="KalasyAI.Hosts" hint-size="100%,520px"></x-import></div>
+
+<div style="background:#241a10"><x-import component-from-global-scope="KalasyAI.Platforms" hint-size="100%,420px"></x-import></div>
+
+<div style="background:#14100b"><x-import component-from-global-scope="KalasyAI.Faq" hint-size="100%,520px"></x-import></div>
+
+<x-import component-from-global-scope="KalasyAI.Footer" hint-size="100%,220px"></x-import>
+
+<sc-if value="{{ hasCur }}" hint-placeholder-val="{{ false }}">
+<div style="height:98px"></div>
+<div role="region" aria-label="Плэер падкаста" style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(36,26,16,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(242,185,63,.32);box-shadow:0 -10px 44px rgba(0,0,0,.65)">
+<div class="wrap" style="display:flex;align-items:center;gap:16px;padding:13px 20px">
+<button onClick="{{ toggleCur }}" aria-label="{{ playAria }}" style="width:48px;height:48px;border-radius:99px;background:#f2b93f;color:#1c1408;border:none;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex:none;cursor:pointer;box-shadow:0 0 22px rgba(242,185,63,.45);transition:transform .2s" style-hover="transform:scale(1.06)">{{ playIcon }}</button>
+<div style="flex:1;min-width:0">
+<div style="font-weight:600;font-size:.92rem;color:#f7ecd8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ curLabel }}</div>
+<div style="display:flex;align-items:center;gap:11px;margin-top:8px">
+<span style="font-size:.74rem;color:#e3d3b7;flex:none;font-variant-numeric:tabular-nums">{{ curTime }}</span>
+<div onClick="{{ seek }}" style="flex:1;height:6px;border-radius:99px;background:rgba(247,236,216,.16);cursor:pointer;position:relative">
+<div ref="{{ fillRef }}" style="position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:99px;background:linear-gradient(90deg,#d8431f,#f2b93f);pointer-events:none"></div>
+</div>
+<span style="font-size:.74rem;color:#e3d3b7;flex:none;font-variant-numeric:tabular-nums">{{ curDur }}</span>
+</div>
+</div>
+<div style="display:flex;gap:8px;flex:none">
+<button onClick="{{ back15 }}" aria-label="Назад на 15 секунд" style="background:none;border:1px solid rgba(247,236,216,.24);border-radius:9px;color:#e3d3b7;font-size:.74rem;font-weight:600;padding:7px 9px;cursor:pointer;font-family:inherit" style-hover="border-color:#f2b93f;color:#ffd98a">−15</button>
+<button onClick="{{ fwd30 }}" aria-label="Наперад на 30 секунд" style="background:none;border:1px solid rgba(247,236,216,.24);border-radius:9px;color:#e3d3b7;font-size:.74rem;font-weight:600;padding:7px 9px;cursor:pointer;font-family:inherit" style-hover="border-color:#f2b93f;color:#ffd98a">+30</button>
+<button onClick="{{ cycleRate }}" aria-label="Хуткасць прайгравання" style="background:none;border:1px solid rgba(247,236,216,.24);border-radius:9px;color:#e3d3b7;font-size:.74rem;font-weight:600;padding:7px 9px;cursor:pointer;font-family:inherit;min-width:44px" style-hover="border-color:#f2b93f;color:#ffd98a">{{ rateLabel }}</button>
+<button onClick="{{ closePlayer }}" aria-label="Закрыць плэер" style="background:none;border:1px solid rgba(247,236,216,.24);border-radius:9px;color:#e3d3b7;font-size:.8rem;padding:7px 10px;cursor:pointer;font-family:inherit" style-hover="border-color:#d8431f;color:#ef8f74">✕</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Раздзелы&quot;},&quot;showTelegram&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Раздзелы&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Рух&quot;}}">
+const MONTHS = ['студзеня','лютага','сакавіка','красавіка','мая','чэрвеня','ліпеня','жніўня','верасня','кастрычніка','лістапада','снежня'];
+const RATES = [1, 1.25, 1.5, 1.75, 2];
+
+class Component extends DCLogic {
+  state = { cur: null, playing: false, t: 0, dur: 0, rate: 1 };
+  fillRef = React.createRef();
+
+  paintFill() {
+    const el = this.fillRef.current;
+    if (!el) return;
+    const a = this.audio, d = a && a.duration;
+    el.style.width = (d && isFinite(d) ? Math.min(100, (a.currentTime / d) * 100) : 0) + '%';
+  }
+
+  componentDidMount() {
+    const a = this.audio = new Audio();
+    a.preload = 'metadata';
+    a.addEventListener('timeupdate', () => { this.paintFill(); this.setState({ t: a.currentTime }); });
+    a.addEventListener('durationchange', () => this.setState({ dur: a.duration || 0 }));
+    a.addEventListener('play', () => this.setState({ playing: true }));
+    a.addEventListener('pause', () => this.setState({ playing: false }));
+    a.addEventListener('ended', () => this.setState({ playing: false, t: 0 }));
+    this.forceUpdate();
+    setTimeout(() => this.setupReveal(), 60);
+  }
+  componentDidUpdate() { this.paintFill(); setTimeout(() => this.setupReveal(), 60); }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this.audio) { this.audio.pause(); this.audio.src = ''; }
+  }
+
+  setupReveal() {
+    const on = this.props.motion ?? true;
+    const nodes = document.querySelectorAll('[data-reveal]');
+    if (!nodes.length) return;
+    if (this._io) { this._io.disconnect(); this._io = null; }
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!on || reduce || !('IntersectionObserver' in window)) {
+      nodes.forEach(n => { n.style.opacity = '1'; n.style.transform = 'none'; });
+      return;
+    }
+    nodes.forEach(n => {
+      if (n.dataset.revealed) return;
+      n.style.opacity = '0';
+      n.style.transform = n.dataset.reveal === 'x' ? 'scaleX(.2)' : 'translateY(20px)';
+      n.style.transition = 'opacity .65s cubic-bezier(.2,.7,.3,1), transform .65s cubic-bezier(.2,.7,.3,1)';
+    });
+    this._io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.dataset.revealed = '1';
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        this._io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+    nodes.forEach(n => { if (!n.dataset.revealed) this._io.observe(n); });
+  }
+
+  clock(s) {
+    if (!s || !isFinite(s)) return '0:00';
+    const total = Math.floor(s), h = Math.floor(total / 3600), m = Math.floor((total % 3600) / 60), x = total % 60;
+    const mm = h ? String(m).padStart(2, '0') : String(m);
+    return (h ? h + ':' : '') + mm + ':' + String(x).padStart(2, '0');
+  }
+  human(sec) {
+    const h = Math.floor(sec / 3600), m = Math.round((sec % 3600) / 60);
+    return h ? (m ? h + ' гадз ' + m + ' хв' : h + ' гадз') : m + ' хв';
+  }
+  when(iso) {
+    const d = new Date(iso);
+    return isNaN(d) ? '' : d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
+  }
+
+  start(ep) {
+    const a = this.audio;
+    if (!a || !ep.mp3) return;
+    if (this.state.cur && this.state.cur.mp3 === ep.mp3) {
+      if (a.paused) a.play().catch(() => {}); else a.pause();
+      return;
+    }
+    a.src = ep.mp3;
+    a.playbackRate = this.state.rate;
+    this.setState({ cur: ep, t: 0, dur: 0 });
+    a.play().catch(() => {});
+  }
+
+  renderVals() {
+    const K = window.KalasyAI || {};
+    const all = K.FALLBACK_EPISODES || [];
+    const cur = this.state.cur;
+    const playing = this.state.playing;
+    const dur = this.state.dur || (cur ? cur.durationSec : 0) || 0;
+
+    const episodes = all.slice(0, 8).map(e => {
+      const isCur = !!cur && cur.mp3 === e.mp3;
+      return {
+        num: '#' + e.num,
+        title: e.title,
+        link: e.link,
+        meta: [this.when(e.date), this.human(e.durationSec)].filter(Boolean).join(' · '),
+        icon: isCur && playing ? '❚❚' : '▶',
+        aria: (isCur && playing ? 'Спыніць' : 'Слухаць') + ' — ' + e.title,
+        play: ev => { ev.preventDefault(); ev.stopPropagation(); this.start(e); }
+      };
+    });
+
+    return {
+      showStats: this.props.showStats ?? true,
+      showTelegram: this.props.showTelegram ?? true,
+      episodes,
+      hasCur: !!cur,
+      curLabel: cur ? '#' + cur.num + ' · ' + cur.title : '',
+      curTime: this.clock(this.state.t),
+      curDur: this.clock(dur),
+      fillRef: this.fillRef,
+      playIcon: playing ? '❚❚' : '▶',
+      playAria: playing ? 'Паўза' : 'Слухаць',
+      rateLabel: (Number.isInteger(this.state.rate) ? this.state.rate + ',0' : String(this.state.rate).replace('.', ',')) + '×',
+      playLatest: ev => { ev.preventDefault(); if (all[0]) this.start(all[0]); },
+      toggleCur: () => { const a = this.audio; if (!a) return; if (a.paused) a.play().catch(() => {}); else a.pause(); },
+      back15: () => { if (this.audio) this.audio.currentTime = Math.max(0, this.audio.currentTime - 15); },
+      fwd30: () => { if (this.audio) this.audio.currentTime = Math.min(dur || 1e9, this.audio.currentTime + 30); },
+      cycleRate: () => {
+        const next = RATES[(RATES.indexOf(this.state.rate) + 1) % RATES.length];
+        if (this.audio) this.audio.playbackRate = next;
+        this.setState({ rate: next });
+      },
+      closePlayer: () => { if (this.audio) { this.audio.pause(); this.audio.src = ''; } this.setState({ cur: null, t: 0, dur: 0 }); },
+      seek: ev => {
+        const r = ev.currentTarget.getBoundingClientRect();
+        if (this.audio && dur) this.audio.currentTime = ((ev.clientX - r.left) / r.width) * dur;
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

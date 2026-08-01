@@ -12,6 +12,24 @@ A podcast about artificial intelligence — witty, human and entirely in Belarus
 ## hero.quote
 “Something intangible rolls from the cities into the villages… not smoke, not noise, but a quiet mind that sees without eyes, speaks without a tongue — and knows everything about us.”
 
+## hero.latest
+Latest episode
+
+## hero.also
+Also on:
+
+## stats.episodes
+episodes
+
+## stats.hours
+hours of talk
+
+## stats.cadence
+weeks apart
+
+## stats.hosts
+hosts
+
 ## about.title
 What is this podcast about?
 
@@ -41,6 +59,9 @@ Poems by Emilia
 
 ## about.card4.text
 And for dessert — a segment where Emilia reads poetry. AI models come and go, but poetry is forever.
+
+## featured.kicker
+Start here
 
 ## featured.title
 A perfect place to start
@@ -79,7 +100,7 @@ for your podcast app
 Latest episodes
 
 ## episodes.lead
-Press ▶ and listen right here.
+Press ▶ and listen right here — the player stays at the bottom.
 
 ## episodes.all
 All episodes →
@@ -92,6 +113,36 @@ min
 
 ## episodes.months
 January, February, March, April, May, June, July, August, September, October, November, December
+
+## tg.quote
+"So you don't miss how AI keeps reaping our fields"
+
+## tg.cta
+Subscribe on Telegram
+
+## tg.note
+episode announcements and AI news in Belarusian · no spam
+
+## player.region
+Podcast player
+
+## player.play
+Play
+
+## player.pause
+Pause
+
+## player.back
+Back 15 seconds
+
+## player.forward
+Forward 30 seconds
+
+## player.speed
+Playback speed
+
+## player.close
+Close player
 
 ## hosts.title
 Who hosts the podcast?

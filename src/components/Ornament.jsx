@@ -4,7 +4,7 @@ import './Ornament.css'
 export default function Ornament({ green = false }) {
   const id = `orn-${useId().replace(/[^a-zA-Z0-9]/g, '')}`
   return (
-    <svg className={`ornament${green ? ' green' : ''}`} aria-hidden="true">
+    <svg className={`ornament${green ? ' green' : ''}`} aria-hidden="true" data-reveal="x">
       <defs>
         <pattern id={id} width="34" height="34" patternUnits="userSpaceOnUse">
           <rect x="12" y="12" width="10" height="10" transform="rotate(45 17 17)" fill="currentColor" />

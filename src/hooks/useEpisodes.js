@@ -11,8 +11,6 @@ export const FALLBACK_EPISODES = [
   { num: '21', title: 'Беларускі ШІ-журналіст, марш супраць ШІ, робат учыніў вэрхал, закрыццё Sora', date: '2026-04-06T11:20:54Z', durationSec: 7217, link: 'https://kalasyai.podbean.com/e/21/', mp3: 'https://mcdn.podbean.com/mf/web/f6f8qggmhb5uriva/21_2.mp3' },
 ]
 
-const EPISODE_COUNT = 6
-
 function parseDuration(text) {
   if (!text) return null
   if (/^\d+$/.test(text)) return parseInt(text, 10)
@@ -35,7 +33,6 @@ function parseFeed(xmlText) {
   const doc = new DOMParser().parseFromString(xmlText, 'text/xml')
   if (doc.querySelector('parsererror')) throw new Error('bad XML')
   return [...doc.querySelectorAll('channel > item')]
-    .slice(0, EPISODE_COUNT)
     .map((item) => {
       const { num, title } = splitTitle(
         item.querySelector('title')?.textContent ?? '',
@@ -54,23 +51,31 @@ function parseFeed(xmlText) {
     .filter((ep) => ep.title)
 }
 
+// The hook is used by several components at once (Hero, Stats, Episodes) —
+// fetch the feed once and share the promise between them.
+let feedPromise = null
+function fetchFeed() {
+  feedPromise ??= fetch(LINKS.rss)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      return res.text()
+    })
+    .then(parseFeed)
+    .catch(() => {
+      feedPromise = null
+      return []
+    })
+  return feedPromise
+}
+
 export function useEpisodes() {
   const [episodes, setEpisodes] = useState(FALLBACK_EPISODES)
 
   useEffect(() => {
     let cancelled = false
-    fetch(LINKS.rss)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.text()
-      })
-      .then((xml) => {
-        const eps = parseFeed(xml)
-        if (!cancelled && eps.length) setEpisodes(eps)
-      })
-      .catch(() => {
-        /* keep the fallback snapshot */
-      })
+    fetchFeed().then((eps) => {
+      if (!cancelled && eps.length) setEpisodes(eps)
+    })
     return () => {
       cancelled = true
     }

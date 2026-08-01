@@ -1,0 +1,18 @@
+.quote-band{
+  position:relative;overflow:hidden;background:var(--night);
+  padding:96px 20px;text-align:center;
+}
+.quote-band::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(242,185,63,.09),transparent 70%);
+}
+.quote-mark{
+  position:relative;display:block;
+  font-family:"Marck Script",cursive;font-size:2.4rem;line-height:1;color:var(--red);
+}
+.quote-band blockquote{
+  position:relative;max-width:24ch;margin:18px auto 0;
+  font-family:"Bad Script",cursive;
+  font-size:clamp(1.35rem,3.2vw,2.15rem);line-height:1.55;
+  color:var(--gold-bright);text-wrap:pretty;
+}

@@ -27,6 +27,10 @@ a{color:inherit}
 img{max-width:100%;display:block}
 h1,h2,h3{font-family:"Unbounded",sans-serif;line-height:1.15}
 
+/* the browser's blue outline is unreadable on the dark background */
+:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px;border-radius:6px}
+:focus:not(:focus-visible){outline:none}
+
 /* ── buttons ────────────────────────────────────── */
 .btn{
   display:inline-flex;align-items:center;gap:10px;
@@ -49,9 +53,18 @@ section{padding:84px 20px}
 }
 .sec-lead{text-align:center;color:var(--cream-dim);max-width:min(62ch,100%);margin:0 auto 52px;font-size:1.05rem}
 
+/* ── scroll reveal (see hooks/useReveal.js) ─────── */
+[data-reveal]{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .65s cubic-bezier(.2,.7,.3,1),transform .65s cubic-bezier(.2,.7,.3,1);
+}
+[data-reveal="x"]{transform:scaleX(.2);transform-origin:left center}
+[data-reveal].revealed{opacity:1;transform:none}
+
 @media (max-width:560px){
   section{padding:64px 16px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none}
 }

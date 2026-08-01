@@ -7,9 +7,7 @@ export default function Featured() {
   const { t } = useLang()
   return (
     <section className="featured" id="featured">
-      <div className="wrap">
-        <h2 className="sec-title">{t('featured.title')}</h2>
-        <p className="sec-lead">{t('featured.lead')}</p>
+      <div className="featured-split" data-reveal="">
         <div className="featured-video">
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}`}
@@ -18,6 +16,11 @@ export default function Featured() {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
+        </div>
+        <div className="featured-text">
+          <p className="featured-kicker">{t('featured.kicker')}</p>
+          <h2>{t('featured.title')}</h2>
+          <p>{t('featured.lead')}</p>
         </div>
       </div>
     </section>

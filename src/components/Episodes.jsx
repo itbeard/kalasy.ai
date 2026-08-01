@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n.jsx'
 import { LINKS } from '../links.js'
 import { useEpisodes } from '../hooks/useEpisodes.js'
+import { usePlayer } from '../player/PlayerProvider.jsx'
 import { PlayIcon, PauseIcon } from './Icons.jsx'
 import './Episodes.css'
 
@@ -21,36 +21,17 @@ function formatDuration(sec, t) {
     : `${m} ${t('episodes.minutes')}`
 }
 
+const EPISODE_COUNT = 6
+
 export default function Episodes() {
   const { lang, t } = useLang()
-  const episodes = useEpisodes()
-  const audioRef = useRef(null)
-  const [playingMp3, setPlayingMp3] = useState(null)
+  const episodes = useEpisodes().slice(0, EPISODE_COUNT)
+  const { current, playing, play } = usePlayer()
 
-  useEffect(() => {
-    const audio = new Audio()
-    audioRef.current = audio
-    const onEnded = () => setPlayingMp3(null)
-    audio.addEventListener('ended', onEnded)
-    return () => {
-      audio.removeEventListener('ended', onEnded)
-      audio.pause()
-    }
-  }, [])
-
-  function togglePlay(ev, mp3) {
+  function togglePlay(ev, ep) {
     ev.preventDefault()
     ev.stopPropagation()
-    const audio = audioRef.current
-    if (!audio || !mp3) return
-    if (playingMp3 === mp3) {
-      audio.pause()
-      setPlayingMp3(null)
-      return
-    }
-    if (audio.src !== mp3) audio.src = mp3
-    audio.play()
-    setPlayingMp3(mp3)
+    play(ep)
   }
 
   const months = t('episodes.months').split(',').map((m) => m.trim())
@@ -61,24 +42,29 @@ export default function Episodes() {
         <h2 className="sec-title">{t('episodes.title')}</h2>
         <p className="sec-lead">{t('episodes.lead')}</p>
 
-        <div className="ep-list">
+        <div className="ep-list" data-reveal="">
           {episodes.map((ep) => {
-            const meta = [formatDate(ep.date, lang, months), formatDuration(ep.durationSec, t)]
-              .filter(Boolean)
-              .join(' · ')
-            const isPlaying = ep.mp3 && playingMp3 === ep.mp3
+            const date = formatDate(ep.date, lang, months)
+            const duration = formatDuration(ep.durationSec, t)
+            const isPlaying = ep.mp3 && current?.mp3 === ep.mp3 && playing
             return (
               <a className="ep" href={ep.link} target="_blank" rel="noopener noreferrer" key={ep.link}>
                 {ep.num && <span className="ep-num">#{ep.num}</span>}
                 <span className="ep-body">
                   <span className="ep-title">{ep.title}</span>
-                  {meta && <span className="ep-meta">{meta}</span>}
+                  {(date || duration) && (
+                    <span className="ep-meta">
+                      {date && <time dateTime={ep.date}>{date}</time>}
+                      {date && duration && ' · '}
+                      {duration}
+                    </span>
+                  )}
                 </span>
                 {ep.mp3 && (
                   <button
                     className={`ep-play${isPlaying ? ' playing' : ''}`}
-                    onClick={(ev) => togglePlay(ev, ep.mp3)}
-                    aria-label={`${isPlaying ? 'Pause' : 'Play'} ${ep.title}`}
+                    onClick={(ev) => togglePlay(ev, ep)}
+                    aria-label={`${isPlaying ? t('player.pause') : t('player.play')}: ${ep.title}`}
                   >
                     {isPlaying ? <PauseIcon /> : <PlayIcon />}
                   </button>

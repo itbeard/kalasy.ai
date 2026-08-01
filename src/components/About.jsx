@@ -11,11 +11,11 @@ const CARDS = [
 export default function About() {
   const { t } = useLang()
   return (
-    <section id="about">
+    <section className="about" id="about">
       <div className="wrap">
         <h2 className="sec-title">{t('about.title')}</h2>
         <p className="sec-lead">{t('about.lead')}</p>
-        <div className="cards">
+        <div className="cards" data-reveal="">
           {CARDS.map(({ key, glyph }) => (
             <div className="card" key={key}>
               <span className="glyph">{glyph}</span>

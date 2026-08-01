@@ -11,7 +11,7 @@ export default function Hosts() {
       <div className="wrap">
         <h2 className="sec-title">{t('hosts.title')}</h2>
         <p className="sec-lead">{t('hosts.lead')}</p>
-        <div className="hosts-flex">
+        <div className="hosts-flex" data-reveal="">
           <div className="hosts-photo">
             <img src="/assets/hosts.jpg" alt={t('hosts.photo.alt')} />
           </div>

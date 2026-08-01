@@ -1,0 +1,13 @@
+.tg-band{
+  padding:72px 20px;text-align:center;
+  border-top:1px solid rgba(242,185,63,.16);
+  border-bottom:1px solid rgba(242,185,63,.16);
+  background:linear-gradient(115deg,#3a2a16 0%,var(--dusk) 52%,#1b1409 100%);
+}
+.tg-quote{
+  max-width:36ch;margin:0 auto;
+  font-family:"Bad Script",cursive;
+  font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.5;color:var(--gold-bright);
+}
+.tg-band .btn{margin-top:24px}
+.tg-note{margin-top:16px;font-size:.86rem;color:var(--cream-dim)}
