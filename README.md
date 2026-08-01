@@ -18,3 +18,11 @@ npm run build  # прадакшн-зборка ў dist/
 - `src/links.js` — усе спасылкі на пляцоўкі ў адным месцы.
 - `public/assets/` — графіка (фон, лога, фота вядоўцаў).
 - `Графіка/` — зыходнікі графікі (PSD і поўнапамерныя выявы), у зборку не трапляюць.
+
+## GEO / SEO
+
+- `index.html` — JSON-LD разметка (`PodcastSeries`, `FAQPage`), canonical, OG-мета, `<noscript>`-змест для краулераў без JS.
+- `public/llms.txt` — апісанне праекта для ШІ-краулераў у prompt-friendly фармаце.
+- `public/robots.txt` — усе краулеры (у т.л. GPTBot, ClaudeBot, PerplexityBot) дазволеныя; спасылка на sitemap.
+- `public/sitemap.xml` — абнаўляйце `lastmod` пры значных зменах.
+- Пры праўках FAQ у `content/*.md` сінхранізуйце адказы з блокам `FAQPage` у `index.html`.

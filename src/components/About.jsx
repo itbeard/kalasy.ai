@@ -4,7 +4,8 @@ import './About.css'
 const CARDS = [
   { key: 'card1', glyph: '🌾' },
   { key: 'card2', glyph: '🏰' },
-  { key: 'card3', glyph: '✨' },
+  { key: 'card3', glyph: '✍️' },
+  { key: 'card4', glyph: '🌙' },
 ]
 
 export default function About() {
