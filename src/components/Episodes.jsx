@@ -49,7 +49,14 @@ export default function Episodes() {
             const isPlaying = ep.mp3 && current?.mp3 === ep.mp3 && playing
             return (
               <a className="ep" href={ep.link} target="_blank" rel="noopener noreferrer" key={ep.link}>
-                {ep.num && <span className="ep-num">#{ep.num}</span>}
+                {ep.num && (
+                  <span
+                    className={`ep-num${ep.special ? ' special' : ''}`}
+                    title={ep.special ? t('episodes.special') : undefined}
+                  >
+                    {ep.special ? 'S' : '#'}{ep.num}
+                  </span>
+                )}
                 <span className="ep-body">
                   <span className="ep-title">{ep.title}</span>
                   {(date || duration) && (

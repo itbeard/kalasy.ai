@@ -39,7 +39,10 @@ export default function Player() {
           </button>
           <div className="player-main">
             <p className="player-title">
-              {current.num && `#${current.num} · `}
+              {current.num &&
+                (current.special
+                  ? `${t('episodes.special')} #${current.num} · `
+                  : `#${current.num} · `)}
               {current.title}
             </p>
             <div className="player-bar">

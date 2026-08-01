@@ -114,6 +114,9 @@ min
 ## episodes.months
 January, February, March, April, May, June, July, August, September, October, November, December
 
+## episodes.special
+Special
+
 ## tg.quote
 "So you don't miss how AI keeps reaping our fields"
 

@@ -3,6 +3,7 @@ import { LINKS } from '../links.js'
 
 // Snapshot shown instantly (and if the RSS fetch fails); the live feed replaces it.
 export const FALLBACK_EPISODES = [
+  { num: '1', special: true, title: 'ШІ, дзеці і будучыня праграмістаў — наш першы спэшал', date: '2026-08-01T07:35:53Z', durationSec: 6385, link: 'https://kalasyai.podbean.com/e/sp-1/', mp3: 'https://mcdn.podbean.com/mf/web/hbq5qiqwbvbzyb6c/kalasyai_sp-1.mp3' },
   { num: '26', title: 'Рабатызацыя Беларусі, каханне з робатам, Grok у Пентагоне і магутны Fable 5', date: '2026-06-30T06:22:43Z', durationSec: 8391, link: 'https://kalasyai.podbean.com/e/26/', mp3: 'https://mcdn.podbean.com/mf/web/eqk6sue4eauexzf4/kalasyai-26.mp3' },
   { num: '25', title: 'ШІ-светлафоры ў Беларусі, працэсар-пластыр, Gemini Omni, Claude Opus 4.8, гаўно і трэскі', date: '2026-06-18T20:24:55Z', durationSec: 8082, link: 'https://kalasyai.podbean.com/e/25/', mp3: 'https://mcdn.podbean.com/mf/web/nnxt5gqwgu2s2g4a/kalasyai-25.mp3' },
   { num: '24', title: 'Сакрэты Пентагона, робат-манах, табло ганьбы і ШІ-скандал з Mark Formelle', date: '2026-05-21T21:07:35Z', durationSec: 7272, link: 'https://kalasyai.podbean.com/e/24/', mp3: 'https://mcdn.podbean.com/mf/web/z5qrdde8jq6wbwuk/kalasyai-24.mp3' },
@@ -19,8 +20,17 @@ function parseDuration(text) {
   return parts.reduce((acc, p) => acc * 60 + p, 0)
 }
 
-// Titles come as "#26 - Тэма..." or "Тэма... / КПСШІ #18" — pull the number out.
+// Titles come as "#26 - Тэма...", "Тэма... / КПСШІ #18"
+// or "Спэшал #1 | Тэма..." — pull the number (and special flag) out.
 function splitTitle(rawTitle) {
+  const specialMatch = rawTitle.match(/^(?:Спэшал|Special)\s*#\s*(\d+)\s*[|\-–—]\s*/i)
+  if (specialMatch) {
+    return {
+      num: specialMatch[1],
+      special: true,
+      title: rawTitle.slice(specialMatch[0].length).trim(),
+    }
+  }
   const numMatch = rawTitle.match(/#\s*(\d+)/)
   const title = rawTitle
     .replace(/^#\s*\d+\s*[-–—]\s*/, '')
@@ -34,13 +44,14 @@ function parseFeed(xmlText) {
   if (doc.querySelector('parsererror')) throw new Error('bad XML')
   return [...doc.querySelectorAll('channel > item')]
     .map((item) => {
-      const { num, title } = splitTitle(
+      const { num, special, title } = splitTitle(
         item.querySelector('title')?.textContent ?? '',
       )
       const durationEl = item.getElementsByTagNameNS('*', 'duration')[0]
       const pubDate = item.querySelector('pubDate')?.textContent
       return {
         num,
+        special,
         title,
         date: pubDate ? new Date(pubDate).toISOString() : null,
         durationSec: parseDuration(durationEl?.textContent?.trim()),

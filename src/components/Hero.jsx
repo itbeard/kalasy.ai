@@ -55,7 +55,10 @@ export default function Hero() {
         <span>
           <small>
             {t('hero.latest')}
-            {latest.num && ` · #${latest.num}`}
+            {latest.num &&
+              (latest.special
+                ? ` · ${t('episodes.special')} #${latest.num}`
+                : ` · #${latest.num}`)}
           </small>
           <b>{latest.title}</b>
         </span>

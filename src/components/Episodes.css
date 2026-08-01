@@ -8,6 +8,7 @@
   font-family:"Unbounded",sans-serif;font-weight:700;font-size:1.15rem;
   color:var(--red);min-width:64px;text-align:center;flex:none;
 }
+.ep-num.special{color:var(--gold)}
 .ep-body{flex:1;min-width:0}
 .ep-title{display:block;font-weight:600;font-size:1rem;color:var(--cream)}
 .ep-meta{display:block;color:#e3d3b7;font-size:.84rem;margin-top:4px}
