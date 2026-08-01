@@ -18,15 +18,15 @@ export default function App() {
         <Hero />
         <Ornament />
         <About />
-        <Ornament green />
+        <Ornament />
         <Featured />
         <Ornament />
         <Platforms />
-        <Ornament green />
+        <Ornament />
         <Episodes />
         <Ornament />
         <Hosts />
-        <Ornament green />
+        <Ornament />
         <Faq />
       </main>
       <Footer />

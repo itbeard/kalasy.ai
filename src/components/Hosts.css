@@ -6,4 +6,6 @@
 .host{padding:18px 0;border-bottom:1px solid rgba(247,236,216,.12)}
 .host:last-child{border-bottom:none}
 .host b{font-family:"Unbounded",sans-serif;font-weight:500;font-size:1.05rem;color:var(--gold-bright)}
+.host a{color:inherit;text-decoration:underline;text-underline-offset:4px;transition:color .2s}
+.host a:hover{color:var(--gold)}
 .host p{color:var(--cream-dim);font-size:.9rem;margin-top:4px}

@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import { renderRich } from '../richtext.jsx'
 import './Hosts.css'
 
 const HOSTS = ['1', '2', '3']
@@ -17,8 +18,8 @@ export default function Hosts() {
           <div className="hosts-list">
             {HOSTS.map((n) => (
               <div className="host" key={n}>
-                <b>{t(`hosts.${n}.name`)}</b>
-                <p>{t(`hosts.${n}.text`)}</p>
+                <b>{renderRich(t(`hosts.${n}.name`))}</b>
+                <p>{renderRich(t(`hosts.${n}.text`))}</p>
               </div>
             ))}
           </div>

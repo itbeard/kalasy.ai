@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import { renderRich } from '../richtext.jsx'
 import './Faq.css'
 
 const ITEMS = ['1', '2', '3', '4', '5']
@@ -13,7 +14,7 @@ export default function Faq() {
           {ITEMS.map((n) => (
             <details className="faq-item" key={n}>
               <summary>{t(`faq.q${n}`)}</summary>
-              <p>{t(`faq.a${n}`)}</p>
+              <p>{renderRich(t(`faq.a${n}`))}</p>
             </details>
           ))}
         </div>

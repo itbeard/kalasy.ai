@@ -100,19 +100,19 @@ Who hosts the podcast?
 Three friends, one microphone and endless curiosity about artificial intelligence.
 
 ## hosts.1.name
-Emilia Haurus
+[Emilia Haurus](https://www.linkedin.com/in/emilia-gawrus-200a141a0/)
 
 ## hosts.1.text
 The voice that turns the complex into the clear.
 
 ## hosts.2.name
-Yauhen Yafimau
+[Yauhen Yafimau](https://www.linkedin.com/in/eugene-efimov/)
 
 ## hosts.2.text
 Always knows which robot caused chaos this week.
 
 ## hosts.3.name
-Aliaksei Kartynnik
+[Aliaksei Kartynnik](https://itbeard.com)
 
 ## hosts.3.text
 Explains neural networks so well even your grandma in the village gets it.
@@ -145,7 +145,7 @@ Every episode reviews the freshest global AI news plus a dedicated block about A
 Who hosts the podcast?
 
 ## faq.a4
-Three hosts: Emilia Haurus, Yauhen Yafimau and Aliaksei Kartynnik.
+Three hosts: [Emilia Haurus](https://www.linkedin.com/in/emilia-gawrus-200a141a0/), [Yauhen Yafimau](https://www.linkedin.com/in/eugene-efimov/) and [Aliaksei Kartynnik](https://itbeard.com).
 
 ## faq.q5
 What language is it in?

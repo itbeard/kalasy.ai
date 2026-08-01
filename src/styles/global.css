@@ -43,7 +43,8 @@ h1,h2,h3{font-family:"Unbounded",sans-serif;line-height:1.15}
 section{padding:84px 20px}
 .wrap{max-width:var(--maxw);margin:0 auto}
 .sec-title{
-  font-size:clamp(1.5rem,3.6vw,2.3rem);font-weight:700;color:var(--gold-soft);
+  font-family:"Marck Script",cursive;
+  font-size:clamp(2.1rem,4.6vw,3.2rem);font-weight:400;color:var(--gold-soft);
   text-align:center;margin-bottom:14px;
 }
 .sec-lead{text-align:center;color:var(--cream-dim);max-width:min(62ch,100%);margin:0 auto 52px;font-size:1.05rem}
