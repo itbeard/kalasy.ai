@@ -1,5 +1,7 @@
 .platforms{background:var(--dusk)}
-.plat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.plat-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.plat{flex:1 1 200px;max-width:280px}
+@media (max-width:640px){.plat{max-width:100%}}
 .plat{
   display:flex;align-items:center;gap:14px;
   border:1px solid rgba(247,236,216,.16);border-radius:16px;

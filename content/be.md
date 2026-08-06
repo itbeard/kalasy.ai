@@ -27,8 +27,8 @@
 ## stats.cadence
 тыдні паміж
 
-## stats.hosts
-вядучыя
+## stats.views
+праглядаў на YouTube
 
 ## about.title
 Пра што гэты падкаст?

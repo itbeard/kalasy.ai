@@ -12,11 +12,11 @@ import {
 import './Platforms.css'
 
 const PLATFORMS = [
-  { name: 'Spotify', tagKey: 'plat.spotify', href: LINKS.spotify, Icon: SpotifyIcon, color: '#1DB954' },
-  { name: 'Apple Podcasts', tagKey: 'plat.apple', href: LINKS.apple, Icon: AppleIcon, color: '#B150E2' },
   { name: 'YouTube', tagKey: 'plat.youtube', href: LINKS.youtube, Icon: YouTubeIcon, color: '#FF0000' },
   { name: 'Telegram', tagKey: 'plat.telegram', href: LINKS.telegram, Icon: TelegramIcon, color: '#2AABEE' },
   { name: 'Instagram', tagKey: 'plat.instagram', href: LINKS.instagram, Icon: InstagramIcon, color: '#E1306C' },
+  { name: 'Spotify', tagKey: 'plat.spotify', href: LINKS.spotify, Icon: SpotifyIcon, color: '#1DB954' },
+  { name: 'Apple Podcasts', tagKey: 'plat.apple', href: LINKS.apple, Icon: AppleIcon, color: '#B150E2' },
   { nameKey: 'plat.mp3.name', tag: 'kalasyai.podbean.com', href: LINKS.podbean, Icon: Mp3Icon, color: '#f2b93f' },
   { name: 'RSS', tagKey: 'plat.rss', href: LINKS.rss, Icon: RssIcon, color: '#f28c1e' },
 ]

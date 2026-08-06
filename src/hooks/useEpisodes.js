@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
 import { LINKS } from '../links.js'
 
+// Episodes #1–#4 are missing from the Podbean feed (they exist only on YouTube),
+// so the stats add them by hand: 1:45:09 + 1:58:48 + 1:54:43 + 2:04:43.
+export const UNLISTED_EPISODES_COUNT = 4
+export const UNLISTED_EPISODES_SECONDS = 27803
+
 // Snapshot shown instantly (and if the RSS fetch fails); the live feed replaces it.
 export const FALLBACK_EPISODES = [
   { num: '1', special: true, title: 'ШІ, дзеці і будучыня праграмістаў — наш першы спэшал', date: '2026-08-01T07:35:53Z', durationSec: 6385, link: 'https://kalasyai.podbean.com/e/sp-1/', mp3: 'https://mcdn.podbean.com/mf/web/hbq5qiqwbvbzyb6c/kalasyai_sp-1.mp3' },

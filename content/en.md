@@ -27,8 +27,8 @@ hours of talk
 ## stats.cadence
 weeks apart
 
-## stats.hosts
-hosts
+## stats.views
+views on YouTube
 
 ## about.title
 What is this podcast about?
