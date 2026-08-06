@@ -64,7 +64,7 @@ And for dessert — a segment where Emilia reads poetry. AI models come and go, 
 Start here
 
 ## featured.title
-A perfect place to start
+The castle episode
 
 ## featured.lead
 Not sure which episode to try first? Watch our first offline recording in a real castle: emotions in AI, cloning colleagues, layoffs and a little wine.
