@@ -45,6 +45,8 @@ h1,h2,h3{font-family:"Unbounded",sans-serif;line-height:1.15}
 
 /* ── sections ───────────────────────────────────── */
 section{padding:84px 20px}
+/* якары не хаваюцца пад fixed-шапкай */
+section[id],[id="featured"]{scroll-margin-top:76px}
 .wrap{max-width:var(--maxw);margin:0 auto}
 .sec-title{
   font-family:"Marck Script",cursive;

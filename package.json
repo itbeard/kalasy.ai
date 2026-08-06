@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "generate": "node scripts/generate-seo.mjs && node scripts/sync-episodes.mjs",
+    "prebuild": "npm run generate",
     "build": "vite build",
+    "check": "node scripts/check-content.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,33 +1,36 @@
 # Каласы пад сярпом ШІ
 
-> «Каласы пад сярпом ШІ» (КПСШІ) — беларускамоўны падкаст пра штучны інтэлект.
-> Выходзіць раз на два тыдні з жніўня 2025 года; больш за 26 выпускаў, кожны прыкладна па 2 гадзіны.
+> «Каласы пад сярпом ШІ» (КПСШІ) — беларускамоўны падкаст пра штучны інтэлект,
+> тэхналогіі, культуру і грамадства. Першы выпуск выйшаў 24 чэрвеня 2025 году;
+> новыя выпускі звычайна выходзяць раз на два тыдні і доўжацца каля дзвюх гадзін.
 > Вядоўцы: Эмілія Гаўрус, Яўген Яфімаў, Аляксей Картыннік.
 
-"Kalasy pad siarpom ShI" (Ears of Grain Under the Sickle of AI) is a Belarusian-language
-podcast about artificial intelligence. New episodes every two weeks since August 2025;
-26+ episodes, ~2 hours each. Hosts: Emilia Haurus, Yauhen Yafimau, Aliaksei Kartynnik.
+"Kalasy pad siarpom ŠI" (roughly "Ears of Grain under the Sickle of AI") is a
+Belarusian-language podcast about artificial intelligence, technology, culture
+and society. The first episode was published on June 24, 2025; new episodes
+usually arrive every two weeks and run for about two hours.
+Hosts: Emilia Haurus, Yauhen Yafimau, Aliaksei Kartynnik.
 
 ## Пра што выпускі / What's inside
 
-- Агляд самых свежых сусветных навін штучнага інтэлекту / Review of the freshest global AI news
-- Навіны ШІ ў Беларусі / AI news from Belarus
-- Моўная рубрыка: вядоўцы выпраўляюць беларускамоўныя памылкі адно аднаго / Language segment: hosts correct each other's Belarusian
-- Рубрыка, дзе Эмілія чытае вершы / A segment where Emilia reads poetry
+- Галоўныя навіны ШІ ў свеце і Беларусі / The AI news that matters, globally and in Belarus
+- Мадэлі, робаты, навука, праца, адукацыя, культура, права і этыка / Models, robots, research, work, education, culture, law and ethics
+- Моўная рубрыка: вядоўцы выпраўляюць беларускамоўныя памылачкі адно аднаго / Language notes: hosts correct each other's Belarusian
+- Фінальны верш у выкананні Эміліі / A closing poem read by Emilia
 
 ## Дзе слухаць / Where to listen
 
 - Spotify: https://open.spotify.com/show/1hs0L5Rtpp1BQ8wzFTMkZr
 - Apple Podcasts: https://podcasts.apple.com/us/podcast/id1833654219
-- YouTube: https://youtube.com/kalasyai
-- mp3 на Podbean: https://kalasyai.podbean.com
+- YouTube: https://www.youtube.com/@kalasyai
+- MP3 на Podbean: https://kalasyai.podbean.com
 - RSS: https://feed.podbean.com/kalasyai/feed.xml
 
 ## Сацсеткі / Social
 
 - Telegram (анонсы): https://t.me/kalasyai
-- Instagram: https://instagram.com/kalasyai
+- Instagram: https://www.instagram.com/kalasyai/
 
 ## Сайт / Site
 
-- Галоўная старонка (беларуская + англійская): https://kalasy.ai/
+- https://kalasy.ai/ (беларуская і англійская версіі, мова вызначаецца аўтаматычна)

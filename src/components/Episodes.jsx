@@ -28,13 +28,9 @@ export default function Episodes() {
   const episodes = useEpisodes().slice(0, EPISODE_COUNT)
   const { current, playing, play } = usePlayer()
 
-  function togglePlay(ev, ep) {
-    ev.preventDefault()
-    ev.stopPropagation()
-    play(ep)
-  }
-
   const months = t('episodes.months').split(',').map((m) => m.trim())
+  // назвы выпускаў заўсёды беларускія — пазначаем гэта на англійскай старонцы
+  const titleLang = lang === 'en' ? 'be' : undefined
 
   return (
     <section id="episodes">
@@ -48,42 +44,48 @@ export default function Episodes() {
             const duration = formatDuration(ep.durationSec, t)
             const isPlaying = ep.mp3 && current?.mp3 === ep.mp3 && playing
             return (
-              <a className="ep" href={ep.link} target="_blank" rel="noopener noreferrer" key={ep.link}>
-                {ep.num && (
-                  <span
-                    className={`ep-num${ep.special ? ' special' : ''}`}
-                    title={ep.special ? t('episodes.special') : undefined}
-                  >
-                    {ep.special ? 'S' : '#'}{ep.num}
-                  </span>
-                )}
-                <span className="ep-body">
-                  <span className="ep-title">{ep.title}</span>
-                  {(date || duration) && (
-                    <span className="ep-meta">
-                      {date && <time dateTime={ep.date}>{date}</time>}
-                      {date && duration && ' · '}
-                      {duration}
+              <article className="ep" key={ep.link}>
+                <a className="ep-link" href={ep.link} target="_blank" rel="noopener noreferrer">
+                  {ep.num && (
+                    <span
+                      className={`ep-num${ep.special ? ' special' : ''}`}
+                      title={ep.special ? t('episodes.special') : undefined}
+                    >
+                      {ep.special ? 'S' : '#'}{ep.num}
                     </span>
                   )}
-                </span>
+                  <span className="ep-body">
+                    <span className="ep-title" lang={titleLang}>{ep.title}</span>
+                    {(date || duration) && (
+                      <span className="ep-meta">
+                        {date && <time dateTime={ep.date}>{date}</time>}
+                        {date && duration && ' · '}
+                        {duration}
+                      </span>
+                    )}
+                  </span>
+                </a>
                 {ep.mp3 && (
                   <button
+                    type="button"
                     className={`ep-play${isPlaying ? ' playing' : ''}`}
-                    onClick={(ev) => togglePlay(ev, ep)}
+                    onClick={() => play(ep)}
                     aria-label={`${isPlaying ? t('player.pause') : t('player.play')}: ${ep.title}`}
                   >
                     {isPlaying ? <PauseIcon /> : <PlayIcon />}
                   </button>
                 )}
-              </a>
+              </article>
             )
           })}
         </div>
 
         <div className="all-eps">
           <a className="btn btn-ghost" href={LINKS.podbean} target="_blank" rel="noopener noreferrer">
-            {t('episodes.all')}
+            {t('episodes.allAudio')}
+          </a>
+          <a className="btn btn-ghost" href={LINKS.youtube} target="_blank" rel="noopener noreferrer">
+            {t('episodes.allVideo')}
           </a>
         </div>
       </div>

@@ -4,6 +4,11 @@ import { useEffect } from 'react'
 // gets the .revealed class the first time it scrolls into view.
 export function useReveal() {
   useEffect(() => {
+    // без IntersectionObserver проста паказваем кантэнт — нічога не хаваем назаўсёды
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('revealed'))
+      return
+    }
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const observer = new IntersectionObserver(
       (entries) => {

@@ -13,7 +13,14 @@ export default function Hosts() {
         <p className="sec-lead">{t('hosts.lead')}</p>
         <div className="hosts-flex" data-reveal="">
           <div className="hosts-photo">
-            <img src="/assets/hosts.jpg" alt={t('hosts.photo.alt')} />
+            <img
+              src="/assets/hosts.jpg"
+              alt={t('hosts.photo.alt')}
+              width="800"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div className="hosts-list">
             {HOSTS.map((n) => (

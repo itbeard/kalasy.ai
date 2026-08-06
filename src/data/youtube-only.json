@@ -1,0 +1,41 @@
+{
+  "note": "Выпускі №1–4 ёсць толькі на YouTube: у Podbean/RSS іх пакуль няма. Калі яны з'явяцца ў RSS, гэты файл трэба ачысціць (пакінуць пусты масіў episodes).",
+  "episodes": [
+    {
+      "num": "4",
+      "special": false,
+      "title": "ШІ для дзяцей, deepfake‑цяжарнасць, ШІ-псіхоз ды Netflix без людзей",
+      "date": "2025-08-04T12:45:20Z",
+      "durationSec": 7483,
+      "link": "https://www.youtube.com/watch?v=ATidXxr0vrE",
+      "mp3": null
+    },
+    {
+      "num": "3",
+      "special": false,
+      "title": "Маск, Grok 4, вайфы, сэксцінг і пры чым тут беларусы? / ШІ з традыцыйнымі каштоўнасьцямі",
+      "date": "2025-07-19T11:10:39Z",
+      "durationSec": 6883,
+      "link": "https://www.youtube.com/watch?v=WRzMGaBAA40",
+      "mp3": null
+    },
+    {
+      "num": "2",
+      "special": false,
+      "title": "Беларусы, якіх баіцца Google / Кантэнт 18+, жывыя фота і залежнасць ад ШІ",
+      "date": "2025-07-09T12:11:17Z",
+      "durationSec": 7128,
+      "link": "https://www.youtube.com/watch?v=ARQsPYdr_mY",
+      "mp3": null
+    },
+    {
+      "num": "1",
+      "special": false,
+      "title": "Каханне з ШІ, баі робатаў, ШІ-фэйкі, атамная энергетыка і пытанні этыкі",
+      "date": "2025-06-24T12:34:41Z",
+      "durationSec": 6309,
+      "link": "https://www.youtube.com/watch?v=1hepJBvdwc8",
+      "mp3": null
+    }
+  ]
+}

@@ -1,9 +1,13 @@
 .ep{
   display:flex;align-items:center;gap:18px;
-  padding:20px 6px;border-bottom:1px solid rgba(247,236,216,.12);
-  text-decoration:none;transition:background .2s;
+  padding:0 6px;border-bottom:1px solid rgba(247,236,216,.12);
+  transition:background .2s;
 }
 .ep:hover{background:rgba(242,185,63,.06)}
+.ep-link{
+  display:flex;align-items:center;gap:18px;flex:1;min-width:0;
+  padding:20px 0;text-decoration:none;
+}
 .ep-num{
   font-family:"Unbounded",sans-serif;font-weight:700;font-size:1.15rem;
   color:var(--red);min-width:64px;text-align:center;flex:none;
@@ -20,7 +24,7 @@
 }
 .ep-play:hover{background:var(--gold);color:var(--night);box-shadow:0 0 22px rgba(242,185,63,.55)}
 .ep-play svg{width:17px;height:17px}
-.all-eps{text-align:center;margin-top:38px}
+.all-eps{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:38px}
 
 @media (max-width:560px){
   .ep-num{min-width:44px;font-size:1rem}

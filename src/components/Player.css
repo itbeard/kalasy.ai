@@ -22,20 +22,42 @@
   font-weight:600;font-size:.92rem;color:var(--cream);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
-.player-bar{display:flex;align-items:center;gap:11px;margin-top:8px}
+.player-bar{display:flex;align-items:center;gap:11px}
 .player-bar time{flex:none;font-size:.74rem;color:#e3d3b7;font-variant-numeric:tabular-nums}
+
+/* seek — натыўны range з бачнай паласой 6px і зонай націску 40px */
 .player-track{
-  position:relative;flex:1;height:6px;border-radius:99px;
-  background:rgba(247,236,216,.16);cursor:pointer;
+  -webkit-appearance:none;appearance:none;
+  flex:1;min-width:0;height:40px;margin:-8px 0;
+  background:transparent;cursor:pointer;
 }
-.player-fill{
-  position:absolute;left:0;top:0;bottom:0;border-radius:99px;pointer-events:none;
+.player-track:disabled{cursor:default;opacity:.5}
+.player-track::-webkit-slider-runnable-track{
+  height:6px;border-radius:99px;
+  background:linear-gradient(90deg,var(--red) 0%,var(--gold) var(--progress,0%),rgba(247,236,216,.16) var(--progress,0%));
+}
+.player-track::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:14px;height:14px;margin-top:-4px;border:none;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 10px rgba(242,185,63,.7);
+}
+.player-track::-moz-range-track{
+  height:6px;border-radius:99px;background:rgba(247,236,216,.16);
+}
+.player-track::-moz-range-progress{
+  height:6px;border-radius:99px;
   background:linear-gradient(90deg,var(--red),var(--gold));
 }
+.player-track::-moz-range-thumb{
+  width:14px;height:14px;border:none;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 10px rgba(242,185,63,.7);
+}
+.player-track:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px;border-radius:99px}
+
 .player-extra{display:flex;gap:8px;flex:none}
 .player-btn{
   background:none;border:1px solid rgba(247,236,216,.24);border-radius:9px;color:#e3d3b7;
-  font:600 .74rem/1 "Golos Text",sans-serif;padding:7px 9px;cursor:pointer;
+  font:600 .74rem/1 "Golos Text",sans-serif;padding:10px 11px;cursor:pointer;
 }
 .player-btn:hover{border-color:var(--gold);color:var(--gold-bright)}
 .player-close{flex:none}

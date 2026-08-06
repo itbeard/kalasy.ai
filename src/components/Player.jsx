@@ -12,17 +12,28 @@ function formatTime(sec) {
   return h > 0 ? `${h}:${String(m).padStart(2, '0')}:${s}` : `${m}:${s}`
 }
 
+// «12 хв 08 с» / «1 гадз 47 хв» — чалавечы тэкст для aria-valuetext
+function formatSpoken(sec, t) {
+  if (!Number.isFinite(sec) || sec < 0) sec = 0
+  sec = Math.floor(sec)
+  const h = Math.floor(sec / 3600)
+  const m = Math.floor((sec % 3600) / 60)
+  const s = sec % 60
+  const parts = []
+  if (h > 0) parts.push(`${h} ${t('episodes.hours')}`)
+  parts.push(`${m} ${t('episodes.minutes')}`)
+  if (h === 0) parts.push(`${String(s).padStart(2, '0')} ${t('player.seconds')}`)
+  return parts.join(' ')
+}
+
 export default function Player() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const { current, playing, time, dur, rate, toggle, seek, skip, cycleRate, close } = usePlayer()
 
   if (!current) return null
 
-  function onTrackClick(ev) {
-    if (!dur) return
-    const rect = ev.currentTarget.getBoundingClientRect()
-    seek(((ev.clientX - rect.left) / rect.width) * dur)
-  }
+  const max = Math.max(Math.floor(dur), 1)
+  const progress = dur ? `${(time / dur) * 100}%` : '0%'
 
   return (
     <>
@@ -31,6 +42,7 @@ export default function Player() {
       <div className="player" role="region" aria-label={t('player.region')}>
         <div className="player-row">
           <button
+            type="button"
             className="player-play"
             onClick={toggle}
             aria-label={playing ? t('player.pause') : t('player.play')}
@@ -38,7 +50,7 @@ export default function Player() {
             {playing ? <PauseIcon /> : <PlayIcon />}
           </button>
           <div className="player-main">
-            <p className="player-title">
+            <p className="player-title" lang={lang === 'en' ? 'be' : undefined}>
               {current.num &&
                 (current.special
                   ? `${t('episodes.special')} #${current.num} · `
@@ -47,27 +59,34 @@ export default function Player() {
             </p>
             <div className="player-bar">
               <time>{formatTime(time)}</time>
-              <div className="player-track" onClick={onTrackClick}>
-                <div
-                  className="player-fill"
-                  style={{ width: dur ? `${(time / dur) * 100}%` : 0 }}
-                />
-              </div>
+              <input
+                type="range"
+                className="player-track"
+                min="0"
+                max={max}
+                step="1"
+                value={Math.min(Math.floor(time), max)}
+                onChange={(ev) => seek(Number(ev.target.value))}
+                disabled={!dur}
+                aria-label={t('player.seek')}
+                aria-valuetext={`${formatSpoken(time, t)} ${t('player.of')} ${formatSpoken(dur, t)}`}
+                style={{ '--progress': progress }}
+              />
               <time>{formatTime(dur)}</time>
             </div>
           </div>
           <div className="player-extra">
-            <button className="player-btn" onClick={() => skip(-15)} aria-label={t('player.back')}>
+            <button type="button" className="player-btn" onClick={() => skip(-15)} aria-label={t('player.back')}>
               −15
             </button>
-            <button className="player-btn" onClick={() => skip(30)} aria-label={t('player.forward')}>
+            <button type="button" className="player-btn" onClick={() => skip(30)} aria-label={t('player.forward')}>
               +30
             </button>
-            <button className="player-btn" onClick={cycleRate} aria-label={t('player.speed')}>
+            <button type="button" className="player-btn" onClick={cycleRate} aria-label={t('player.speed')}>
               {rate}×
             </button>
           </div>
-          <button className="player-btn player-close" onClick={close} aria-label={t('player.close')}>
+          <button type="button" className="player-btn player-close" onClick={close} aria-label={t('player.close')}>
             ✕
           </button>
         </div>

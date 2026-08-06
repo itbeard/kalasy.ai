@@ -6,6 +6,13 @@
     linear-gradient(180deg,rgba(20,16,11,.55) 0%,rgba(20,16,11,.15) 40%,rgba(20,16,11,.82) 88%,var(--night) 100%),
     url("/assets/bg-hero.jpg") center 38%/cover no-repeat;
 }
+@supports (background-image:image-set(url("/assets/bg-hero.webp") type("image/webp"))){
+  .hero{
+    background-image:
+      linear-gradient(180deg,rgba(20,16,11,.55) 0%,rgba(20,16,11,.15) 40%,rgba(20,16,11,.82) 88%,var(--night) 100%),
+      image-set(url("/assets/bg-hero.webp") type("image/webp"),url("/assets/bg-hero.jpg") type("image/jpeg"));
+  }
+}
 .hero-kicker{
   font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;max-width:100%;line-height:2;
   color:var(--gold-bright);margin-bottom:22px;font-weight:600;
@@ -27,6 +34,7 @@
 }
 .hero-play{
   display:inline-flex;align-items:center;gap:14px;margin-top:42px;padding:14px 30px 14px 18px;
+  max-width:100%;
   border:none;border-radius:99px;background:var(--gold);color:#1c1408;
   font:700 1rem/1.3 "Golos Text",sans-serif;text-align:left;cursor:pointer;
   box-shadow:0 0 34px rgba(242,185,63,.5);transition:transform .22s,box-shadow .22s;
@@ -37,8 +45,9 @@
   display:flex;align-items:center;justify-content:center;
 }
 .hero-play-ico svg{width:15px;height:15px}
+.hero-play > span:last-child{min-width:0}
 .hero-play small{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
-.hero-play b{display:block;max-width:22ch;font-size:1rem;font-weight:700}
+.hero-play b{display:block;max-width:22ch;font-size:1rem;font-weight:700;overflow-wrap:break-word}
 .hero-also{
   display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center;margin-top:22px;
   font-size:.86rem;color:#e3d3b7;text-shadow:0 2px 12px rgba(0,0,0,.9);

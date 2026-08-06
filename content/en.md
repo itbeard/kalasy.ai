@@ -3,11 +3,32 @@
 Each section starts with a `## key` line — keep the keys as they are,
 the text below each key can be edited freely.
 
+## meta.title
+Kalasy pad siarpom ŠI — a Belarusian-language podcast about AI
+
+## meta.description
+A Belarusian-language podcast about AI, technology and culture, hosted by Emilia Haurus, Yauhen Yafimau and Aliaksei Kartynnik.
+
+## lang.label
+Site language
+
+## nav.episodes
+Episodes
+
+## nav.about
+About
+
+## nav.hosts
+Hosts
+
+## nav.listen
+Listen
+
 ## hero.kicker
-podcast · every two weeks · in Belarusian
+AI podcast · usually every two weeks · in Belarusian
 
 ## hero.sub
-A podcast about artificial intelligence — witty, human and entirely in Belarusian.
+AI news, technology and culture through a Belarusian lens — clear, curious and never dull. The show is entirely in Belarusian.
 
 ## hero.quote
 “Something intangible rolls from the cities into the villages… not smoke, not noise, but a quiet mind that sees without eyes, speaks without a tongue — and knows everything about us.”
@@ -16,7 +37,10 @@ A podcast about artificial intelligence — witty, human and entirely in Belarus
 Latest episode
 
 ## hero.also
-Also on:
+Watch or listen:
+
+## hero.scroll
+Go to the recommended episode
 
 ## stats.episodes
 episodes
@@ -27,6 +51,9 @@ hours of talk
 ## stats.cadence
 weeks apart
 
+## stats.hosts
+hosts
+
 ## stats.views
 views on YouTube
 
@@ -34,31 +61,31 @@ views on YouTube
 What is this podcast about?
 
 ## about.lead
-Every two weeks Emilia, Yauhen and Aliaksei sit down to discuss how artificial intelligence is changing the world — and what it means for all of us. Since August 2025 they have recorded 26+ episodes, each around two hours of living Belarusian — no jargon, plenty of humour. And you don't need to be a programmer: if you wonder where this "quiet mind" is rolling — this show is for you.
+Usually every two weeks, Emilia, Yauhen and Aliaksei discuss how AI is changing technology, culture, work and everyday life — globally and in Belarus. Expect roughly two hours of lively conversation in Belarusian, with humour, strong opinions and no programming background required. The first episode was published in June 2025.
 
 ## about.card1.title
-The freshest AI news
+The AI news that matters
 
 ## about.card1.text
-The biggest events in AI — new models, robots, scandals and breakthroughs — explained simply and clearly.
+New models, robots, research and major events — with a clear explanation of what happened and why it matters.
 
 ## about.card2.title
 AI in Belarus
 
 ## about.card2.text
-Special attention goes to AI news from Belarus: from smart traffic lights to robot milkmaids and local startups.
+Belarusian projects, research, education, public initiatives and the people building with AI.
 
 ## about.card3.title
-Minding our language
+Language notes
 
 ## about.card3.text
-At the end of every episode we correct each other's Belarusian slips — and learn to speak more beautifully together.
+At the end of each episode, we revisit our Belarusian slips and learn to speak the language better together.
 
 ## about.card4.title
-Poems by Emilia
+Poetry with Emilia
 
 ## about.card4.text
-And for dessert — a segment where Emilia reads poetry. AI models come and go, but poetry is forever.
+Each regular episode ends with a poem read by Emilia — a quiet pause after the news, models and robots.
 
 ## featured.kicker
 Start here
@@ -67,7 +94,10 @@ Start here
 The castle episode
 
 ## featured.lead
-Not sure which episode to try first? Watch our first offline recording in a real castle: emotions in AI, cloning colleagues, layoffs and a little wine.
+New to the show? Start with our first in-person recording in a real castle: AI emotions, cloned colleagues, layoffs and a little wine.
+
+## featured.cta
+Watch on YouTube →
 
 ## listen.title
 Where can you listen?
@@ -91,7 +121,7 @@ news & announcements
 behind the scenes
 
 ## plat.mp3.name
-Listen as .mp3
+MP3 on Podbean
 
 ## plat.rss
 for your podcast app
@@ -100,10 +130,13 @@ for your podcast app
 Latest episodes
 
 ## episodes.lead
-Press ▶ and listen right here — the player stays at the bottom.
+Press ▶ to listen here. The player will stay at the bottom of the page.
 
-## episodes.all
-All episodes →
+## episodes.allAudio
+All audio episodes →
+
+## episodes.allVideo
+Full video archive →
 
 ## episodes.hours
 h
@@ -124,7 +157,7 @@ Special
 Subscribe on Telegram
 
 ## tg.note
-episode announcements and AI news in Belarusian · no spam
+new episodes and Belarusian AI news · no spam
 
 ## player.region
 Podcast player
@@ -147,29 +180,38 @@ Playback speed
 ## player.close
 Close player
 
+## player.seek
+Playback position
+
+## player.seconds
+s
+
+## player.of
+of
+
 ## hosts.title
 Who hosts the podcast?
 
 ## hosts.lead
-Three friends, one microphone and endless curiosity about artificial intelligence.
+Three friends, three different perspectives and one shared curiosity about AI.
 
 ## hosts.1.name
 [Emilia Haurus](https://www.linkedin.com/in/emilia-gawrus-200a141a0/)
 
 ## hosts.1.text
-The voice that turns the complex into the clear.
+Brings the cultural and language perspective — and closes each regular episode with a poem.
 
 ## hosts.2.name
 [Yauhen Yafimau](https://www.linkedin.com/in/eugene-efimov/)
 
 ## hosts.2.text
-Always knows which robot caused chaos this week.
+Finds the strangest stories about robots, technology and the people behind them.
 
 ## hosts.3.name
 [Aliaksei Kartynnik](https://itbeard.com)
 
 ## hosts.3.text
-Explains neural networks so well even your grandma in the village gets it.
+A software developer and AI educator who explains complex technology clearly and without the hype.
 
 ## hosts.photo.alt
 Emilia Haurus, Yauhen Yafimau and Aliaksei Kartynnik — the podcast hosts
@@ -178,22 +220,22 @@ Emilia Haurus, Yauhen Yafimau and Aliaksei Kartynnik — the podcast hosts
 Frequently asked questions
 
 ## faq.q1
-What is "Kalasy pad siarpom ShI"?
+What is “Каласы пад сярпом ШІ”?
 
 ## faq.a1
-"Kalasy pad siarpom ShI" (Ears of Grain Under the Sickle of AI) is a Belarusian-language podcast about artificial intelligence. It has been released every two weeks since August 2025 — 26+ episodes so far, each around 2 hours.
+“Каласы пад сярпом ШІ” (Kalasy pad siarpom ŠI; roughly “Ears of Grain under the Sickle of AI”) is a Belarusian-language podcast about artificial intelligence, technology, culture and society. The first episode was published on June 24, 2025. New episodes usually arrive every two weeks and run for about two hours.
 
 ## faq.q2
 Where can I listen to it?
 
 ## faq.a2
-On Spotify, Apple Podcasts, YouTube, Podbean (mp3) and via RSS in any podcast app. News and announcements are posted in the Telegram channel t.me/kalasyai.
+Listen on Spotify, Apple Podcasts or Podbean, watch on YouTube, or subscribe through RSS in any podcast app. Announcements and short updates are posted at t.me/kalasyai.
 
 ## faq.q3
 What is each episode about?
 
 ## faq.a3
-Every episode reviews the freshest global AI news plus a dedicated block about AI news in Belarus. At the end there is a language segment where the hosts correct each other's Belarusian, and a segment where Emilia reads poetry.
+The hosts cover major AI news globally and in Belarus: models, robots, research, work, education, culture, law and ethics. Regular episodes end with Belarusian language notes and a poem read by Emilia.
 
 ## faq.q4
 Who hosts the podcast?
@@ -211,4 +253,4 @@ Entirely in Belarusian. The website is available in Belarusian and English.
 “Everything gets smarter — but does it get better? So we talk it over the human way — like the weather or the harvest.”
 
 ## footer.copy
-© 2026 Kalasy pad siarpom ShI · kalasy.ai
+Kalasy pad siarpom ŠI · kalasy.ai

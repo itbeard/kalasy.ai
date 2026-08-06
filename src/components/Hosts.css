@@ -1,7 +1,7 @@
 .hosts{background:linear-gradient(180deg,var(--dusk),var(--night))}
 .hosts-flex{display:flex;gap:48px;align-items:center;flex-wrap:wrap;justify-content:center}
 .hosts-photo{flex:1 1 340px;max-width:460px}
-.hosts-photo img{border-radius:20px;box-shadow:0 22px 60px rgba(0,0,0,.6),0 0 0 1px rgba(242,185,63,.25)}
+.hosts-photo img{width:100%;height:auto;border-radius:20px;box-shadow:0 22px 60px rgba(0,0,0,.6),0 0 0 1px rgba(242,185,63,.25)}
 .hosts-list{flex:1 1 320px;max-width:480px}
 .host{padding:18px 0;border-bottom:1px solid rgba(247,236,216,.12)}
 .host:last-child{border-bottom:none}

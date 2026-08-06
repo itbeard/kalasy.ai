@@ -99,13 +99,18 @@ export function PlayerProvider({ children }) {
   const seek = useCallback((sec) => {
     const a = audioRef.current
     if (!a) return
-    a.currentTime = Math.min(Math.max(sec, 0), a.duration || sec)
+    const target = Math.min(Math.max(sec, 0), a.duration || sec)
+    a.currentTime = target
+    // не чакаем timeupdate: слайдэр і лічбы адгукаюцца адразу
+    setTime(target)
   }, [])
 
   const skip = useCallback((delta) => {
     const a = audioRef.current
     if (!a) return
-    a.currentTime = Math.min(Math.max(a.currentTime + delta, 0), a.duration || 0)
+    const target = Math.min(Math.max(a.currentTime + delta, 0), a.duration || 0)
+    a.currentTime = target
+    setTime(target)
   }, [])
 
   const cycleRate = useCallback(() => {

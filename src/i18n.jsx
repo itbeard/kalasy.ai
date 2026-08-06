@@ -25,16 +25,27 @@ function parseContent(raw) {
 const DICTS = { be: parseContent(beRaw), en: parseContent(enRaw) }
 const STORAGE_KEY = 'kalasy-lang'
 
+// Мова браўзера беларуская → беларуская версія, іншая → англійская.
+// Ручны выбар у шапцы захоўваецца і мае перавагу над аўтавызначэннем.
+function detectLang() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved === 'be' || saved === 'en') return saved
+  } catch {
+    /* private mode etc. */
+  }
+  try {
+    const langs = navigator.languages?.length ? navigator.languages : [navigator.language]
+    return langs.some((l) => l?.toLowerCase().startsWith('be')) ? 'be' : 'en'
+  } catch {
+    return 'be'
+  }
+}
+
 const LangContext = createContext(null)
 
 export function LangProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    try {
-      return localStorage.getItem(STORAGE_KEY) === 'en' ? 'en' : 'be'
-    } catch {
-      return 'be'
-    }
-  })
+  const [lang, setLang] = useState(detectLang)
 
   useEffect(() => {
     document.documentElement.lang = lang

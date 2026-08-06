@@ -24,7 +24,7 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <p className="copy">{t('footer.copy')}</p>
+      <p className="copy">© {new Date().getFullYear()} {t('footer.copy')}</p>
     </footer>
   )
 }

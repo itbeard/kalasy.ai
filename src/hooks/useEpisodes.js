@@ -1,21 +1,15 @@
 import { useEffect, useState } from 'react'
 import { LINKS } from '../links.js'
+import episodesSnapshot from '../data/episodes.json'
+import youtubeOnly from '../data/youtube-only.json'
 
-// Episodes #1–#4 are missing from the Podbean feed (they exist only on YouTube),
-// so the stats add them by hand: 1:45:09 + 1:58:48 + 1:54:43 + 2:04:43.
-export const UNLISTED_EPISODES_COUNT = 4
-export const UNLISTED_EPISODES_SECONDS = 27803
+// Выпускі №1–4 ёсць толькі на YouTube (іх няма ў Podbean/RSS) —
+// гл. src/data/youtube-only.json. Калі яны з'явяцца ў RSS, файл трэба ачысціць.
+export const YOUTUBE_ONLY_EPISODES = youtubeOnly.episodes
 
-// Snapshot shown instantly (and if the RSS fetch fails); the live feed replaces it.
-export const FALLBACK_EPISODES = [
-  { num: '1', special: true, title: 'ШІ, дзеці і будучыня праграмістаў — наш першы спэшал', date: '2026-08-01T07:35:53Z', durationSec: 6385, link: 'https://kalasyai.podbean.com/e/sp-1/', mp3: 'https://mcdn.podbean.com/mf/web/hbq5qiqwbvbzyb6c/kalasyai_sp-1.mp3' },
-  { num: '26', title: 'Рабатызацыя Беларусі, каханне з робатам, Grok у Пентагоне і магутны Fable 5', date: '2026-06-30T06:22:43Z', durationSec: 8391, link: 'https://kalasyai.podbean.com/e/26/', mp3: 'https://mcdn.podbean.com/mf/web/eqk6sue4eauexzf4/kalasyai-26.mp3' },
-  { num: '25', title: 'ШІ-светлафоры ў Беларусі, працэсар-пластыр, Gemini Omni, Claude Opus 4.8, гаўно і трэскі', date: '2026-06-18T20:24:55Z', durationSec: 8082, link: 'https://kalasyai.podbean.com/e/25/', mp3: 'https://mcdn.podbean.com/mf/web/nnxt5gqwgu2s2g4a/kalasyai-25.mp3' },
-  { num: '24', title: 'Сакрэты Пентагона, робат-манах, табло ганьбы і ШІ-скандал з Mark Formelle', date: '2026-05-21T21:07:35Z', durationSec: 7272, link: 'https://kalasyai.podbean.com/e/24/', mp3: 'https://mcdn.podbean.com/mf/web/z5qrdde8jq6wbwuk/kalasyai-24.mp3' },
-  { num: '23', title: 'Сабакі з кулямётамі, клон Цукерберга, GPT 5.5, DeepSeek v4 і ШІ-магістратура ў БНТУ', date: '2026-05-06T19:48:12Z', durationSec: 7104, link: 'https://kalasyai.podbean.com/e/23/', mp3: 'https://mcdn.podbean.com/mf/web/7b9k7a5rkvs78qbv/23.mp3' },
-  { num: '22', title: 'Першы афлайн у замку: эмоцыі ў ШІ, кланаванне калег, звальненні і крыху віна', date: '2026-04-29T12:17:04Z', durationSec: 9099, link: 'https://kalasyai.podbean.com/e/22/', mp3: 'https://mcdn.podbean.com/mf/web/n9m77ggq4y5u4uqw/22.mp3' },
-  { num: '21', title: 'Беларускі ШІ-журналіст, марш супраць ШІ, робат учыніў вэрхал, закрыццё Sora', date: '2026-04-06T11:20:54Z', durationSec: 7217, link: 'https://kalasyai.podbean.com/e/21/', mp3: 'https://mcdn.podbean.com/mf/web/f6f8qggmhb5uriva/21_2.mp3' },
-]
+// Build-time snapshot стужкі (scripts/sync-episodes.mjs): старонка адразу
+// паказвае актуальныя выпускі, а жывы RSS ціха абнаўляе іх у браўзеры.
+export const FALLBACK_EPISODES = episodesSnapshot.episodes
 
 function parseDuration(text) {
   if (!text) return null

@@ -1,26 +1,25 @@
 import { useLang } from '../i18n.jsx'
-import {
-  useEpisodes,
-  UNLISTED_EPISODES_COUNT,
-  UNLISTED_EPISODES_SECONDS,
-} from '../hooks/useEpisodes.js'
+import { useEpisodes, YOUTUBE_ONLY_EPISODES } from '../hooks/useEpisodes.js'
+import channel from '../data/channel.json'
 import './Stats.css'
 
-// Total views on youtube.com/@kalasyai — no public API without a key, update by hand.
-const YOUTUBE_VIEWS = '30K+'
+// 30308 → «30K+»; абнаўляецца пры кожнай зборцы (scripts/sync-episodes.mjs)
+function formatViews(n) {
+  if (n >= 1000) return `${Math.floor(n / 1000)}K+`
+  return String(n)
+}
 
 export default function Stats() {
   const { t } = useLang()
   const episodes = useEpisodes()
-  const hours = Math.round(
-    (episodes.reduce((sum, ep) => sum + (ep.durationSec || 0), 0) +
-      UNLISTED_EPISODES_SECONDS) / 3600,
-  )
+  const all = [...episodes, ...YOUTUBE_ONLY_EPISODES]
+  const hours = Math.round(all.reduce((sum, ep) => sum + (ep.durationSec || 0), 0) / 3600)
+  const views = channel.youtubeViews
   const items = [
-    [episodes.length + UNLISTED_EPISODES_COUNT, t('stats.episodes')],
+    [all.length, t('stats.episodes')],
     [hours, t('stats.hours')],
     ['2', t('stats.cadence')],
-    [YOUTUBE_VIEWS, t('stats.views')],
+    views ? [formatViews(views), t('stats.views')] : ['3', t('stats.hosts')],
   ]
 
   return (

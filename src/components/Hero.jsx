@@ -32,7 +32,7 @@ function useShards() {
 }
 
 export default function Hero() {
-  const { t } = useLang()
+  const { lang, t } = useLang()
   const shards = useShards()
   const episodes = useEpisodes()
   const { play } = usePlayer()
@@ -44,11 +44,11 @@ export default function Hero() {
         <span key={s.id} className="shard" style={s.style} />
       ))}
       <p className="hero-kicker">{t('hero.kicker')}</p>
-      <h1>
+      <h1 lang={lang === 'en' ? 'be' : undefined}>
         Каласы пад сярпом <span className="ai">ШІ</span>
       </h1>
       <p className="hero-sub">{t('hero.sub')}</p>
-      <button className="hero-play" onClick={() => play(latest)}>
+      <button type="button" className="hero-play" onClick={() => play(latest)}>
         <span className="hero-play-ico" aria-hidden="true">
           <PlayIcon />
         </span>
@@ -60,7 +60,7 @@ export default function Hero() {
                 ? ` · ${t('episodes.special')} #${latest.num}`
                 : ` · #${latest.num}`)}
           </small>
-          <b>{latest.title}</b>
+          <b lang={lang === 'en' ? 'be' : undefined}>{latest.title}</b>
         </span>
       </button>
       <p className="hero-also">
@@ -70,7 +70,7 @@ export default function Hero() {
         <a href={LINKS.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
         <a href={LINKS.rss} target="_blank" rel="noopener noreferrer">RSS</a>
       </p>
-      <a className="scroll-hint" href="#featured" aria-label="scroll down">
+      <a className="scroll-hint" href="#featured" aria-label={t('hero.scroll')}>
         ▾
       </a>
     </div>
