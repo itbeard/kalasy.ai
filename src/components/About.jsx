@@ -1,11 +1,12 @@
 import { useLang } from '../i18n.jsx'
+import { NewsGlyph, BelarusGlyph, QuillGlyph, MoonGlyph } from './AboutGlyphs.jsx'
 import './About.css'
 
 const CARDS = [
-  { key: 'card1', glyph: '🌾' },
-  { key: 'card2', glyph: '🏰' },
-  { key: 'card3', glyph: '✍️' },
-  { key: 'card4', glyph: '🌙' },
+  { key: 'card1', Glyph: NewsGlyph },
+  { key: 'card2', Glyph: BelarusGlyph },
+  { key: 'card3', Glyph: QuillGlyph },
+  { key: 'card4', Glyph: MoonGlyph },
 ]
 
 export default function About() {
@@ -16,9 +17,9 @@ export default function About() {
         <h2 className="sec-title">{t('about.title')}</h2>
         <p className="sec-lead">{t('about.lead')}</p>
         <div className="cards" data-reveal="">
-          {CARDS.map(({ key, glyph }) => (
+          {CARDS.map(({ key, Glyph }) => (
             <div className="card" key={key}>
-              <span className="glyph">{glyph}</span>
+              <span className="glyph"><Glyph /></span>
               <h3>{t(`about.${key}.title`)}</h3>
               <p>{t(`about.${key}.text`)}</p>
             </div>

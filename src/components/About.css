@@ -10,6 +10,7 @@
   transform:translateY(-6px);border-color:var(--gold);
   box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 30px rgba(242,185,63,.18);
 }
-.card .glyph{font-size:1.9rem;margin-bottom:14px;display:block}
+.card .glyph{display:block;margin-bottom:14px;color:var(--gold)}
+.card .glyph svg{width:38px;height:38px;display:block}
 .card h3{font-size:1.02rem;font-weight:500;color:var(--gold-bright);margin-bottom:10px}
 .card p{color:var(--cream-dim);font-size:.95rem}
